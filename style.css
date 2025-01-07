@@ -1,0 +1,227 @@
+/* Body Styling */
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #2c2c2c; /* Darker background */
+  min-height: 100vh; /* Ensure body fills the viewport */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5334db;
+  padding: 13px 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 15px; /* Add space between links */
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Carousel Styling */
+.carousel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0 auto; /* Center the carousel */
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  margin-top: 17px;
+}
+
+.carousel-images img {
+  width: 280px;
+  border-radius: 20px;
+  height: 500px; /* Membuat gambar memenuhi tinggi container */
+  /* object-fit: fill; */
+  cursor: pointer;
+  flex: 0 0 100%; /* Pastikan gambar mengambil 100% lebar dari carousel */
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.carousel-indicators div {
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background-color: #5334db;
+}
+
+/* Product Section */
+.product-heading {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+
+#our-products {
+  display: flex;
+  flex-wrap: wrap; /* Membuat card bisa menyesuaikan */
+  justify-content: space-around; /* Memberikan jarak antar card */
+  gap: 20px; /* Jarak antar card */
+  padding: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 42%; /* Card akan mengambil 45% lebar container */
+  margin: 20px 0;
+  padding: 20px;
+  box-shadow: 8px 8px rgb(255, 255, 255);
+  background-color: #ffe7d3;
+  border: 6px solid rgb(226, 105, 0);
+  border-radius: 12px;
+  transition: transform 0.3s ease; /* Transisi saat hover */
+}
+
+.product-info .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff; /* Warna teks */
+  margin-top: 15px;
+  padding: 10px 15px; /* Spasi di dalam kotak */
+  background-color: #ffd3c3e7; /* Warna background */
+  border: 4px solid #c70039; /* Warna border */
+  border-radius: 8px; /* Membulatkan sudut */
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  width: fit-content; /* Ukuran mengikuti konten */
+  text-align: left; /* Rata kiri teks */
+  margin-right: auto; /* Agar elemen tidak menyentuh kanan */
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Efek hover untuk sedikit memperbesar card */
+}
+
+.product-card img {
+  max-width: 100%;
+  height: 240px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.product-info {
+  text-align: center;
+}
+
+.product-info h2 {
+  margin: -10px 0 10px;
+  font-size: 32px;
+  color: #2c3e50;
+}
+
+.product-info p {
+  font-size: 18px;
+  color: #000000;
+  text-align: justify;
+  line-height: 1.6;
+}
+
+.product-info .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-top: 15px;
+}
+
+/* About Us Section */
+.about-us {
+  background-color: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.about-us h2 {
+  font-size: 32px;
+  color: #333;
+}
+
+.about-us p {
+  font-size: 20px;
+  color: #555;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.social-links a:hover {
+  color: #111;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #5334db;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+footer h3 {
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+footer .social-links {
+  margin-top: 20px;
+  margin-bottom: -10px;
+  font-weight: bolder;
+}
+
+/* Responsive: Atur agar hanya 1 card per baris pada layar kecil */
+@media (max-width: 768px) {
+  .product-card {
+    max-width: 100%; /* Pada layar kecil, card akan penuh 1 baris */
+  }
+}

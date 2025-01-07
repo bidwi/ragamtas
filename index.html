@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT Tas Jaya Karya - Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Ragamtas</div>
+        <nav>
+            <a href="#BackJack">BackJack</a>
+            <a href="#BagPrem">BagPrem</a>
+            <a href="#LiteBag">LiteBag</a>
+            <a href="#HoldBag">HoldBag</a>
+        </nav>
+    </header>
+
+
+
+    <!-- Carousel Section -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="images/backjack__carousel.png" alt="BackJack" onclick="location.href='#BackJack'">
+            <img src="images/bagprem__carousel.png" alt="BagPrem" onclick="location.href='#BagPrem'">
+            <img src="images/litebag_carousel.png" alt="LiteBag" onclick="location.href='#LiteBag'">
+            <img src="images/holdbag_carousel.png" alt="HoldBag" onclick="location.href='#HoldBag'">
+        </div>
+        <div class="carousel-indicators">
+            <div class="active" data-index="0"></div>
+            <div data-index="1"></div>
+            <div data-index="2"></div>
+            <div data-index="3"></div>
+        </div>
+    </div>
+
+    <script>
+        const carouselImages = document.querySelector('.carousel-images');
+        const indicators = document.querySelectorAll('.carousel-indicators div');
+        const totalImages = indicators.length;
+        let currentIndex = 0;
+
+        function updateCarousel(transition = true) {
+            // Tambahkan atau hapus transisi
+            carouselImages.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
+            carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Perbarui indikator aktif
+            indicators.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function autoSlide() {
+            currentIndex++;
+            if (currentIndex === totalImages) {
+                // Saat mencapai slide terakhir, gunakan klon slide pertama untuk transisi mulus
+                updateCarousel(true); // Lakukan transisi normal
+                setTimeout(() => {
+                    currentIndex = 0; // Kembali ke slide pertama
+                    updateCarousel(false); // Hapus transisi untuk reset posisi
+                }, 500);
+            } else {
+                // Geser ke slide berikutnya dengan transisi normal
+                updateCarousel(true);
+            }
+        }
+
+        // Inisialisasi auto-slide dengan interval
+        setInterval(autoSlide, 5000);
+
+        // Menambahkan event listener untuk indikator
+        indicators.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                updateCarousel(true);
+            });
+        });
+
+    </script>
+
+    <h2 class="product-heading">Our Products</h2>
+    <!-- Product Section -->
+    <div id="our-products">
+        <div id="BackJack" class="product-card">
+            <img src="../images/backjack.png" alt="BackJack">
+            <div class="product-info">
+                <h2>BackJack (Tas Ransel)</h2>
+                <p>BackJack adalah tas ransel yang nyaman dan praktis untuk digunakan sehari-hari. Dengan ruang
+                    penyimpanan
+                    yang luas, tas ini sangat cocok untuk membawa laptop, buku, pakaian, atau barang-barang penting
+                    lainnya.</p>
+                <p class="price">Harga: Rp 90.000</p>
+            </div>
+        </div>
+        <div id="LiteBag" class="product-card">
+            <img src="../images/litebag.png" alt="LiteBag">
+            <div class="product-info">
+                <h2>LiteBag (Tas Selempang)</h2>
+                <p>LiteBag adalah tas selempang ringan yang ideal untuk Anda yang aktif bepergian. Dengan
+                    ukuran yang kecil dan
+                    bahan yang berkualitas, tas
+                    ini cocok untuk menyimpan barang-barang penting seperti dompet, ponsel, atau kunci.</p>
+                <p class="price">Harga: Rp 35.000</p>
+            </div>
+        </div>
+        <div id="BagPrem" class="product-card">
+            <img src="../images/bagprem.png" style="width: 200px;" alt="BagPrem">
+            <div class="product-info">
+                <h2>BagPrem (Tas Premium)</h2>
+                <p>BagPrem adalah tas premium yang dirancang untuk memberikan kesan elegan dan mewah. Dibuat dari kulit
+                    sintetis berkualitas, tas ini tidak hanya awet tetapi juga mudah dirawat. Tas ini cocok digunakan
+                    pada acara formal atau semi-formal. </p>
+                <p class="price">Harga: Rp 170.000</p>
+            </div>
+        </div>
+        <div id="HoldBag" class="product-card">
+            <img src="../images/holdbag.png" alt="HoldBag">
+            <div class="product-info">
+                <h2>HoldBag (Tas Tangan)</h2>
+                <p>HoldBag adalah tas jinjing serbaguna dengan desain simpel dan praktis. Terbuat dari bahan kanvas yang
+                    kuat dan tahan lama, tas ini cocok untuk digunakan dalam berbagai kesempatan. Dengan ruang
+                    penyimpanan yang cukup luas</p>
+                <p class="price">Harga: Rp 15.000</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <h3 style="font-size: 30px;">PT Tas Jaya Karya</h3>
+        <p>&copy; 2025 Ragamtas. &nbsp; All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/bildwi/">Facebook</a>
+            <a href="https://www.instagram.com/bildwi/">Instagram</a>
+            <a href="https://www.instagram.com/bildwi/">Twitter</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
