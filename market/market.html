@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<!-- Carousel Section -->
+<div class="carousel">
+    <div class="carousel-images">
+        <img src="/images/backjack__carousel.png" alt="BackJack" onclick="location.href='#BackJack'">
+        <img src="/images/bagprem__carousel.png" alt="BagPrem" onclick="location.href='#BagPrem'">
+        <img src="/images/litebag_carousel.png" alt="LiteBag" onclick="location.href='#LiteBag'">
+        <img src="/images/holdbag_carousel.png" alt="HoldBag" onclick="location.href='#HoldBag'">
+    </div>
+    <div class="carousel-indicators">
+        <div class="active" data-index="0"></div>
+        <div data-index="1"></div>
+        <div data-index="2"></div>
+        <div data-index="3"></div>
+    </div>
+</div>
+
+<script>
+    const carouselImages = document.querySelector('.carousel-images');
+    const indicators = document.querySelectorAll('.carousel-indicators div');
+    const totalImages = indicators.length;
+    let currentIndex = 0;
+
+    function updateCarousel(transition = true) {
+        carouselImages.style.transition = transition ? 'transform 0.5s ease-in-out' : 'none';
+        carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+        indicators.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function autoSlide() {
+        currentIndex++;
+        if (currentIndex === totalImages) {
+            updateCarousel(true);
+            setTimeout(() => {
+                currentIndex = 0;
+                updateCarousel(false);
+            }, 500);
+        } else {
+            updateCarousel(true);
+        }
+    }
+
+    setInterval(autoSlide, 5000);
+
+    indicators.forEach(dot => {
+        dot.addEventListener('click', () => {
+            currentIndex = parseInt(dot.dataset.index);
+            updateCarousel(true);
+        });
+    });
+
+
+
+</script>
+
+</html>
