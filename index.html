@@ -73,8 +73,8 @@
         });
 
         function redirectToWhatsApp(productName, price) {
-            const phoneNumber = "6285362299382";
-            const message = `PT. Tas Jaya Karya | RagamTas\nJl. Pala, Bagelen, Tebing Tinggi\nBuka dari jam 09:00 s/d 17:00\n\nHalo, saya ingin memesan produk ${productName} dengan harga ${price}. Apakah stoknya tersedia?`;
+            const phoneNumber = "6289516061880";
+            const message = `PT. Tas Jaya Karya | RagamTas\nJl. Pala, Bagelen, Tebing Tinggi\n\nHalo, saya ingin memesan produk RagamTas yang bernama ${productName}, dengan harga ${price} \nNama: (Isi di sini)\nAlamat: (Isi di sini)`;
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         }
@@ -84,7 +84,7 @@
     <h2 class="product-heading">Our Products</h2>
     <!-- Product Section -->
     <div id="our-products">
-        <div id="BackJack" class="product-card">
+        <div id="BackJack" class="product-card" onclick="redirectToWhatsApp('BackJack (Tas Ransel)', 'Rp 90.000')">
             <img src="images/backjack.png" alt="BackJack">
             <div class="product-info">
                 <h2>BackJack (Tas Ransel)</h2>
@@ -92,39 +92,39 @@
                     penyimpanan
                     yang luas, tas ini sangat cocok untuk membawa laptop, buku, pakaian, atau barang-barang penting
                     lainnya.</p>
-                <p class="price" onclick="redirectToWhatsApp('BackJack (Tas Ransel)', 'Rp 90.000')">Harga: Rp 90.000</p>
+                <p class="price">Harga: Rp 90.000</p>
             </div>
         </div>
-        <div id="LiteBag" class="product-card">
+        <div id="LiteBag" class="product-card" onclick="redirectToWhatsApp('LiteBag (Tas Selempang)', 'Rp 35.000')">
             <img src="images/litebag.png" alt="LiteBag">
             <div class="product-info">
                 <h2>LiteBag (Tas Selempang)</h2>
                 <p>LiteBag adalah tas selempang ringan yang ideal untuk Anda yang aktif bepergian. Dengan
                     ukuran yang kecil dan bahan yang berkualitas, tas ini cocok untuk menyimpan barang-barang penting
                     seperti dompet, ponsel, atau kunci.</p>
-                <p class="price" onclick="redirectToWhatsApp('LiteBag (Tas Selempang)', 'Rp 35.000')">Harga: Rp 35.000
+                <p class="price">Harga: Rp 35.000
                 </p>
             </div>
         </div>
-        <div id="BagPrem" class="product-card">
+        <div id="BagPrem" class="product-card" onclick="redirectToWhatsApp('BagPrem (Tas Premium)', 'Rp 170.000')">
             <img src="images/bagprem.png" style="width: 200px;" alt="BagPrem">
             <div class="product-info">
                 <h2>BagPrem (Tas Premium)</h2>
                 <p>BagPrem adalah tas premium yang dirancang untuk memberikan kesan elegan dan mewah. Dibuat dari kulit
                     sintetis berkualitas, tas ini tidak hanya awet tetapi juga mudah dirawat. Tas ini cocok digunakan
                     pada acara formal atau semi-formal. </p>
-                <p class="price" onclick="redirectToWhatsApp('BagPrem (Tas Premium)', 'Rp 170.000')">Harga: Rp 170.000
+                <p class="price">Harga: Rp 170.000
                 </p>
             </div>
         </div>
-        <div id="HoldBag" class="product-card">
+        <div id="HoldBag" class="product-card" onclick="redirectToWhatsApp('HoldBag (Tas Tangan)', 'Rp 15.000')">
             <img src="images/holdbag.png" alt="HoldBag">
             <div class="product-info">
                 <h2>HoldBag (Tas Tangan)</h2>
                 <p>HoldBag adalah tas jinjing serbaguna dengan desain simpel dan praktis. Terbuat dari bahan kanvas yang
                     kuat dan tahan lama, tas ini cocok untuk digunakan dalam berbagai kesempatan. Dengan ruang
                     penyimpanan yang cukup luas.</p>
-                <p class="price" onclick="redirectToWhatsApp('HoldBag (Tas Tangan)', 'Rp 15.000')">Harga: Rp 15.000</p>
+                <p class="price">Harga: Rp 15.000</p>
             </div>
         </div>
     </div>
