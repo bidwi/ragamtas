@@ -74,7 +74,7 @@
 
         function redirectToWhatsApp(productName, price) {
             const phoneNumber = "6289516061880";
-            const message = `PT. Tas Jaya Karya | RagamTas\nJl. Pala, Bagelen, Tebing Tinggi\n\nHalo, saya ingin memesan produk RagamTas yang bernama ${productName}, dengan harga ${price} \nNama: (Isi di sini)\nAlamat: (Isi di sini)`;
+            const message = `PT. Tas Jaya Karya | RagamTas\nJl. Pala, Bagelen, Tebing Tinggi\n\nHalo, saya ingin memesan produk RagamTas yang bernama ${productName}, dengan harga ${price} \nNama: (Isi di sini)\nAlamat: (Isi di sini)\nPembayaran: COD/Dana`;
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(url, "_blank");
         }
